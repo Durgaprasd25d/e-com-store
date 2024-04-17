@@ -5,7 +5,8 @@ import {
   ShoppingCartIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import mainLogo from '../../images/logo1.jpg'
+import mainLogo from "../../images/logo1.jpg";
+import { Link } from "react-router-dom";
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
@@ -64,20 +65,22 @@ function Navbar({ children }) {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
-                        type="button"
-                        className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                      >
-                        <span className="sr-only">View notifications</span>
-                        <ShoppingCartIcon
-                          className="h-6 w-6"
-                          aria-hidden="true"
-                        />
-                        <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-white text-black rounded-full h-4 w-4 text-xs flex items-center justify-center">
-                          2{" "}
-                          {/* Replace '2' with dynamic value representing cart item count */}
-                        </span>
-                      </button>
+                      <Link to="/cart">
+                        <button
+                          type="button"
+                          className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                          <span className="sr-only">View notifications</span>
+                          <ShoppingCartIcon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                          <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-white text-black rounded-full h-4 w-4 text-xs flex items-center justify-center">
+                            2{" "}
+                            {/* Replace '2' with dynamic value representing cart item count */}
+                          </span>
+                        </button>
+                      </Link>
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -179,20 +182,22 @@ function Navbar({ children }) {
                         {user.email}
                       </div>
                     </div>
-                    <button
-                      type="button"
-                      className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    >
-                      <span className="sr-only">View notifications</span>
-                      <ShoppingCartIcon
-                        className="h-6 w-6"
-                        aria-hidden="true"
-                      />
-                      <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white rounded-full h-4 w-4 text-xs flex items-center justify-center">
-                        2{" "}
-                        {/* Replace '2' with dynamic value representing cart item count */}
-                      </span>
-                    </button>
+                    <Link to="/cart">
+                      <button
+                        type="button"
+                        className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <span className="sr-only">View notifications</span>
+                        <ShoppingCartIcon
+                          className="h-6 w-6"
+                          aria-hidden="true"
+                        />
+                        <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-white text-black rounded-full h-4 w-4 text-xs flex items-center justify-center">
+                          2{" "}
+                          {/* Replace '2' with dynamic value representing cart item count */}
+                        </span>
+                      </button>
+                    </Link>
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
@@ -215,7 +220,7 @@ function Navbar({ children }) {
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-            Elevé
+              Elevé
             </h1>
           </div>
         </header>
